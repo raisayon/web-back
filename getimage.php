@@ -4,7 +4,7 @@ if(!empty($_GET['id'])){
     $dbHost     = 'localhost';
     $dbUsername = 'root';
     $dbPassword = '';
-    $dbName     = 'mydatabase';
+    $dbName     = '';
     
     //Create connection and select DB
     $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -15,7 +15,7 @@ if(!empty($_GET['id'])){
     }
     
     //Get image data from database
-    $result = $db->query("SELECT image FROM drinks WHERE id = {$_GET['id']}");
+    $result = $db->query("SELECT image FROM  WHERE id = {$_GET['id']}");
     
     if($result->num_rows > 0){
         $imgData = $result->fetch_assoc();
